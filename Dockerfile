@@ -2,7 +2,7 @@ ARG NODE_VERSION
 
 FROM node:$NODE_VERSION
 
-ARG HUGO_VERSION=0.104.1
+ARG HUGO_VERSION=0.104.2
 
 RUN apt-get update && apt-get install -y wget
 

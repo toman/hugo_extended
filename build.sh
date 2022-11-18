@@ -1,4 +1,5 @@
 #!/bin/bash
+# Usage: ./build.sh MAJOR.MINOR.PATCH
 docker build . --build-arg NODE_VERSION=latest -t lillibolero/hugo_extended:$1
 docker push lillibolero/hugo_extended:$1
 docker build . --build-arg NODE_VERSION=latest -t lillibolero/hugo_extended:latest

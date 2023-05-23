@@ -19,12 +19,12 @@ source "docker" "node" {
 
 variable "hugo_version" {
   type    = string
-  default = "0.111.3"
+  default = "0.112.0"
 }
 
 variable "hugo_version_tag" {
   type    = string
-  default = "1.11.3"
+  default = "1.12.0"
 }
 
 build {

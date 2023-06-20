@@ -19,12 +19,17 @@ source "docker" "node" {
 
 variable "hugo_version" {
   type    = string
-  default = "0.113.0"
+  default = "0.114.0"
 }
 
 variable "hugo_version_tag" {
   type    = string
-  default = "1.13.0"
+  default = "1.14.0"
+}
+
+variable "hugo_platform" {
+  type    = string
+  default = "Linux-64bit"
 }
 
 build {
@@ -34,7 +39,7 @@ build {
   ]
   provisioner "shell" {
     environment_vars = [
-      "TAR_FILE=hugo_extended_${var.hugo_version}_Linux-64bit.tar.gz",
+      "TAR_FILE=hugo_extended_${var.hugo_version}_${var.hugo_platform}.tar.gz",
     ]
     inline = [
       "apt-get update && apt-get install -y wget",

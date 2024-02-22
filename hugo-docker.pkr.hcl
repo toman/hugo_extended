@@ -15,16 +15,18 @@ variable "docker_image" {
 source "docker" "node" {
   image  = var.docker_image
   commit = true
+  changes = [
+    "ENTRYPOINT [\"docker-entrypoint.sh\"]",
+    "CMD [\"node\"]"
+  ]
 }
 
 variable "hugo_version" {
   type    = string
-  default = "0.123.0"
 }
 
 variable "hugo_version_tag" {
   type    = string
-  default = "1.23.0"
 }
 
 variable "hugo_platform" {

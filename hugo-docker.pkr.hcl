@@ -15,6 +15,10 @@ variable "docker_image" {
 source "docker" "node" {
   image  = var.docker_image
   commit = true
+  changes = [
+    "ENTRYPOINT [\"docker-entrypoint.sh\"]",
+    "CMD [\"node\"]"
+  ]
 }
 
 variable "hugo_version" {

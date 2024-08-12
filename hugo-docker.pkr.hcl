@@ -34,6 +34,11 @@ variable "hugo_platform" {
   default = "Linux-64bit"
 }
 
+variable "repository" {
+  type =  string
+  default = "lillibolero/hugo_extended_pkr"
+}
+
 build {
   name = "hugo-extended"
   sources = [
@@ -54,7 +59,7 @@ build {
   }
 
   post-processor "docker-tag" {
-    repository = "lillibolero/hugo_extended_pkr"
+    repository = "${var.repository}"
     tags       = ["${var.hugo_version_tag}", "latest"]
     only       = ["docker.node"]
   }

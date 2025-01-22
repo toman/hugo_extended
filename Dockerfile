@@ -2,7 +2,7 @@ ARG NODE_VERSION
 
 FROM node:$NODE_VERSION
 
-ARG HUGO_VERSION=0.141.0
+ARG HUGO_VERSION=0.142.0
 ARG HUGO_PLATFORM=Linux-64bit
 
 RUN apt-get update && apt-get install -y wget
